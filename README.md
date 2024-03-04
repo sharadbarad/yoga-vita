@@ -1,4 +1,5 @@
 # Yoga-Vita
-A simple website for yoga training center (Front-end only).
+A simple website for <b>yoga training center</b> (Front-end only).
+
 
  
