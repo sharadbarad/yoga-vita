@@ -32,15 +32,14 @@ body{
   height: auto;
 }
 
-.f-head {
-  font-weight: 400;
-  
-}
-
 .f-nav-foot {
   font-weight: 600;
   font-size: 1.2rem;
   word-spacing: 0.15rem;
+}
+
+.f-head {
+  font-weight: 400; 
 }
 
 .f-subhead {
@@ -50,7 +49,7 @@ body{
 }
 
 .f-normal {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1rem;
 }
 
@@ -95,23 +94,32 @@ header {
   height: 100vh;  
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  gap: 40%;
   padding: 0 2vw;
 }
 
 .hero-headline{
   font-weight: 500;
-  top: 35%;
-  left: 1vw;
   margin-left: 2vw;
-  margin-top: -5%;
   color: white; 
   font-size: 2.8rem;
-  z-index: 5;
   line-height: 4rem;
 }
 
 .hero-headline span{
   font-size: 4rem;
   font-weight: 600;
+}
+
+.hero>div{
+  align-self: center;
+  padding-bottom: 2rem;
+}
+.hero-cta-btn{
+  background-color: var(--primary-color);
+  text-decoration: none;
+  padding: 0.4rem 1.5rem;
+  border-radius: 25px;
+  color: white;
 }
