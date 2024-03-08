@@ -60,14 +60,14 @@ body{
 /*----------------    Specific CSS Section    ----------------*/
 
 header {
+  padding: 1rem 2vw 0 2vw;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),  url('../Images/yv-hero.jpg') no-repeat center center;
+}
+
+.header-sec{
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2vw 0 2vw;
-  z-index: 5;
 }
 
 .yv-logo {
@@ -76,8 +76,8 @@ header {
   margin: 0 1vw 0 1vw;
 }
 
-.nav-bar{
-  transform: translateY(-30%);
+.nav-bar {
+  transform: translateY(-15%);
 }
 
 .nav-list li {
@@ -86,8 +86,8 @@ header {
   color: white;
 }
 
+/*
 .hero {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),  url('../Images/yv-hero.jpg') no-repeat center center;
   background-attachment: fixed; 
   background-size: cover;
   width: 100%;
@@ -123,3 +123,4 @@ header {
   border-radius: 25px;
   color: white;
 }
+*/
