@@ -20,6 +20,7 @@ body {
 body{
   font-family: var(--font-family);
   font-style: normal;
+  overflow-x: hidden;
 }
 
 /*----------------    Generic CSS Section    ----------------*/
@@ -40,22 +41,24 @@ body{
 }
 
 .f-head {
-  font-weight: 400; 
+  font-weight: 800; 
+  font-size: 4rem;
+  word-spacing: 0.5rem;
 }
 
 .f-subhead {
-  font-weight: 600;
-  font-size: 1.2rem;
-  word-spacing: 0.15rem;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .f-normal {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .f-small {
   font-weight: 400;
+  font-size: 1rem;
 }
  
 a {
@@ -68,6 +71,27 @@ a {
   padding: 0.4rem 1.5rem;
   border-radius: 1.56rem;
   color: white;
+}
+
+.section{
+  width: 100%;
+  height: max-content;
+  padding: 4rem 8rem;
+}
+
+.row-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap:5rem
+}
+
+.col-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*----------------    Specific CSS Section    ----------------*/
@@ -138,3 +162,39 @@ header {
   padding: 0.278rem 1.5rem 0.278rem 3.55rem;
 }
 
+.features-cont{
+  margin: 3.5rem 3rem 1rem 3rem;
+}
+
+.features-card>p:nth-child(1){
+  line-height: 4rem;
+}
+
+.features-card>img{
+  width: 3rem;
+  height: auto;
+}
+
+.quote-image{
+  background-color: rgb(214, 255, 216);
+}
+
+.quote-image>h1{
+  /* z-index: inherit; */
+  position: absolute;
+  z-index: 1;
+}
+
+.quote-image>h1>span{
+  font-size: larger;
+  font-weight: bolder;
+  color: transparent;
+  -webkit-text-stroke: 0.2rem black;
+}
+
+.quote-image>img{
+  height: clamp(12rem,30vw, 30rem);
+  position: relative;
+  left:70%; 
+  opacity: 0.7;
+}
