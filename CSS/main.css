@@ -2,7 +2,7 @@
   --primary-color: #22ad01;
   --secondary-color: #003c2f;
   --grey-green: #65816d;
-  --background-color:rgb(214, 255, 216);
+  --background-color: rgb(214, 255, 216);
   --font-family: "Martel Sans", sans-serif;
 }
 
@@ -18,7 +18,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body{
+body {
   font-family: var(--font-family);
   font-style: normal;
   overflow-x: hidden;
@@ -42,9 +42,10 @@ body{
 }
 
 .f-head {
-  font-weight: 800; 
+  font-weight: 800;
   font-size: 4rem;
   word-spacing: 0.5rem;
+  color: var(--secondary-color);
 }
 
 .f-subhead {
@@ -61,7 +62,7 @@ body{
   font-weight: 400;
   font-size: 1rem;
 }
- 
+
 a {
   text-decoration: none;
   color: inherit;
@@ -74,21 +75,21 @@ a {
   color: white;
 }
 
-.section{
+.section {
   width: 100%;
   height: max-content;
   padding: 4rem 8rem;
 }
 
-.row-flex{
+.row-flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: start;
-  gap:5rem
+  gap: 5rem;
 }
 
-.col-flex{
+.col-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,8 +103,9 @@ header {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 2vw 0 2vw;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),  url('../Images/yv-hero.jpg') no-repeat center center;
-  background-attachment: fixed; 
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url("/Images/yv-hero.jpg") no-repeat center center;
+  background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 100svh;
@@ -128,15 +130,15 @@ header {
 
 .nav-list li {
   display: inline-block;
-  margin: 0 2vw 0 0.5rem ;
+  margin: 0 2vw 0 0.5rem;
   color: white;
 }
 
 .hero-headline {
   font-weight: 400;
   margin: -2.4rem 0 0 1vw;
-  color: white; 
-  font-size: max(min(3rem, 4vw), 1.5rem); 
+  color: white;
+  font-size: max(min(3rem, 4vw), 1.5rem);
   line-height: 4rem;
 }
 
@@ -150,44 +152,45 @@ header {
   padding-bottom: 2rem;
 }
 
-.hero-cta-btn-group a:nth-child(1){
+.hero-cta-btn-group a:nth-child(1) {
   position: relative;
   z-index: 1;
 }
 
-.hero-cta-btn-group a:nth-child(2){
+.hero-cta-btn-group a:nth-child(2) {
   margin-left: -20%;
   background-color: transparent;
   border: 2px solid var(--primary-color);
   padding: 0.278rem 1.5rem 0.278rem 3.55rem;
 }
 
-.features-cont{
+.features-cont {
   margin: 3.5rem 3rem 1rem 3rem;
 }
 
-.features-card>p:nth-child(1){
+.features-card > p:nth-child(1) {
   line-height: 4rem;
 }
 
-.features-card>img{
+.features-card > img {
   width: 3rem;
   height: auto;
 }
 
-.quote-image{
-  background:  url('../Images/yoga-clipart.png') no-repeat right center, var(--background-color);
+.quote-image {
+  background: url("/Images/yoga-clipart.png") no-repeat right center,
+    var(--background-color);
   background-size: contain;
 }
 
-.quote-image>h1>span{
+.quote-image > h1 > span {
   font-size: larger;
   font-weight: bolder;
   color: transparent;
   -webkit-text-stroke: 0.2rem black;
 }
 
-.training-centers-cont{
+.training-centers-cont {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 3rem;
@@ -195,44 +198,108 @@ header {
   width: 100%;
 }
 
-.center-junagadh{
-  background: url('../Images/center-junagadh.jpeg') no-repeat center bottom;
+.center-junagadh {
+  background: url("/Images/center-junagadh.jpeg") no-repeat center bottom;
 }
-.center-jamnagar{
-  background: url('../Images/center-jamnagar.jpeg') no-repeat center bottom;
+.center-jamnagar {
+  background: url("/Images/center-jamnagar.jpeg") no-repeat center bottom;
 }
-.center-somnath{
-  background: url('../Images/center-somnath.jpg') no-repeat center bottom;
+.center-somnath {
+  background: url("/Images/center-somnath.jpg") no-repeat center bottom;
 }
-.center-gandhinagar{
-  background: url('../Images/center-gandhinagar.jpeg') no-repeat center bottom;
+.center-gandhinagar {
+  background: url("/Images/center-gandhinagar.jpeg") no-repeat center bottom;
 }
 
-.training-center{
+.training-center {
   background-size: cover;
   gap: clamp(11rem, 40vh, 17rem);
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 2rem;
+  transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out;
 }
 
-.training-center>h2{
+.training-center > h2 {
   color: black;
   font-weight: 900;
   -webkit-text-stroke: 1px white;
 }
 
-.training-center:hover a{
+.training-center:hover a {
   padding: 0.2rem 4rem;
-  transition: padding 0.2s ease-in-out;
 }
 
-.training-center a{
-  transition: padding 0.2s ease-in-out;
+.training-center a {
+  transition: padding 0.25s ease-in-out;
 }
 
-.training-center:not(:hover) a{
-  /* padding: 0.3rem 1.6rem; */
-  /* opacity: 0; */
-  /* filter: brightness(0.5) saturate(0) contrast(1.2) blur(2px); */
+.training-centers-cont:hover .training-center:not(:hover) {
+  filter: brightness(0.7) saturate(0.8) contrast(1.2) blur(2px);
 }
 
+.training-centers-cont:hover .training-center:hover {
+  transform: scale(1.03);
+  filter: brightness(1.07);
+}
+
+.pricing-plans {
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+.plans-cont {
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.plan {
+  /* padding: 1rem 1rem; */
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.plan > .price-content > p > span:nth-child(1) {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.plan > .price-content > p > span:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.features p img {
+  width: 12px;
+  height: auto;
+  margin-right: 5px;
+}
+.price-content {
+  padding: 1.5rem;
+}
+.plan-name {
+  background-color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.price-content > a {
+  margin-top: 1rem;
+}
+
+.plan:hover {
+  transform: translateY(-2%);
+}
+
+.standard:hover {
+  transform: scale(1.11);
+}
+
+.standard {
+  transform-origin: bottom;
+  transform: scale(1.1);
+}
