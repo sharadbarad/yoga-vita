@@ -2,6 +2,7 @@
   --primary-color: #22ad01;
   --secondary-color: #003c2f;
   --grey-green: #65816d;
+  --off-white: #efeae3;
   --background-color: rgb(214, 255, 216);
   --font-family: "Martel Sans", sans-serif;
 }
@@ -11,17 +12,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
   width: 100%;
-  text-rendering: optimizeLegibility;
 }
 
 body {
   font-family: var(--font-family);
   font-style: normal;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 /*----------------    Generic CSS Section    ----------------*/
@@ -103,8 +105,8 @@ header {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 2vw 0 2vw;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
-    url("/Images/yv-hero.jpg") no-repeat center center;
+  background-color: black;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("/Images/yv-hero.jpg") no-repeat center center, black;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
@@ -164,6 +166,10 @@ header {
   padding: 0.278rem 1.5rem 0.278rem 3.55rem;
 }
 
+.why-choose-us{
+  background-color: white;
+}
+
 .features-cont {
   margin: 3.5rem 3rem 1rem 3rem;
 }
@@ -188,6 +194,10 @@ header {
   font-weight: bolder;
   color: transparent;
   -webkit-text-stroke: 0.2rem black;
+}
+
+.our-training-centers{
+  background-color: white;
 }
 
 .training-centers-cont {
@@ -245,6 +255,8 @@ header {
 .pricing-plans {
   width: 100%;
   background-color: var(--background-color);
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 
 .plans-cont {
@@ -302,4 +314,66 @@ header {
 .standard {
   transform-origin: bottom;
   transform: scale(1.1);
+}
+
+.space-for-footer{
+  height: 100svh;
+  width: 100%;
+  position: relative;
+  z-index: -10;
+}
+footer{
+  position: relative;
+  z-index: -5;
+}
+.footer{
+  position: fixed;
+  width: 100%;
+  height: 100svh;
+  padding: 4rem 4rem 1rem 4rem;
+  bottom: 0;
+  background-color: black;
+  color: var(--off-white);
+  z-index: -1;
+  justify-content: space-between;
+  align-items: normal;
+}
+
+.footer-credit{
+  padding-top: 1rem;
+  border-top: 1px solid rgba(239, 234, 227, .3);
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-credit p img {
+  width: auto;
+}
+
+.footer-brand-name{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14.5vw;
+  font-weight: 900;
+}
+
+.footer-links{
+  justify-content: space-around;
+}
+
+.footer-links h2{
+  border-bottom: 1px solid rgba(239, 234, 227, 1);
+}
+
+.footer-pages{
+  align-items: flex-start;
+}
+
+.footer-social{
+  align-items: flex-start;
+}
+
+.icon-before{
+  width: 1.8rem;
+  transform: translateY(20%);
+  margin: 0 0.4rem;
 }
