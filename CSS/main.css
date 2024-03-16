@@ -45,19 +45,20 @@ body {
 
 .f-head {
   font-weight: 800;
-  font-size: 4rem;
+  font-size: clamp(1.8rem, 6vw, 4rem);
   word-spacing: 0.5rem;
   color: var(--secondary-color);
 }
 
 .f-subhead {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: clamp(1rem, 3.5vw, 2rem);
 }
 
 .f-normal {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1.35vw, 1.3rem);
+  /* font-size: 1.3rem; */
 }
 
 .f-small {
@@ -80,7 +81,7 @@ a {
 .section {
   width: 100%;
   height: max-content;
-  padding: 4rem 8rem;
+  padding: 3rem clamp(1rem, 5vw, 8rem);
 }
 
 .row-flex {
@@ -96,6 +97,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.t-center{
+  text-align: center;
 }
 
 /*----------------    Specific CSS Section    ----------------*/
@@ -136,22 +145,64 @@ header {
   color: white;
 }
 
-.hero-headline {
-  font-weight: 400;
-  margin: -2.4rem 0 0 1vw;
+.sidebar{
+  background-color: rgba(255, 255, 255, 0.4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 15rem;
+  height: auto;
+  padding: 1rem 1rem 5rem 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  display: none;
+}
+
+.mobile-nav{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.mobile-nav li{
+  margin-top: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.mobile-nav li:hover{
   color: white;
-  font-size: max(min(3rem, 4vw), 1.5rem);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+.mobile-nav li:nth-child(1):hover{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mobile-nav li a{
+  width: 100%;
+  display: block;
+}
+
+.hero-headline {
+  font-weight: 600;
+  margin: -2.4rem 1rem 0 1vw;
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 3rem);
   line-height: 4rem;
 }
 
 .hero-headline span {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 6vw, 6rem);
   font-weight: 600;
 }
 
 .hero-cta-btn-group {
   align-self: center;
   padding-bottom: 2rem;
+  margin-left: 10%;
 }
 
 .hero-cta-btn-group a:nth-child(1) {
@@ -171,7 +222,7 @@ header {
 }
 
 .features-cont {
-  margin: 3.5rem 3rem 1rem 3rem;
+  margin: 3rem 0rem 1rem 0rem;
 }
 
 .features-card > p:nth-child(1) {
@@ -184,8 +235,7 @@ header {
 }
 
 .quote-image {
-  background: url("/Images/yoga-clipart.png") no-repeat right center,
-    var(--background-color);
+  background: url("/Images/yoga-clipart.png") no-repeat right center, var(--background-color);
   background-size: contain;
 }
 
@@ -193,7 +243,7 @@ header {
   font-size: larger;
   font-weight: bolder;
   color: transparent;
-  -webkit-text-stroke: 0.2rem black;
+  -webkit-text-stroke: 0.2rem var(--secondary-color);
 }
 
 .our-training-centers{
@@ -232,7 +282,9 @@ header {
 .training-center > h2 {
   color: black;
   font-weight: 900;
+  font-size: clamp(1.7rem, 3.5vw, 2rem);
   -webkit-text-stroke: 1px white;
+  
 }
 
 .training-center:hover a {
@@ -244,7 +296,7 @@ header {
 }
 
 .training-centers-cont:hover .training-center:not(:hover) {
-  filter: brightness(0.7) saturate(0.8) contrast(1.2) blur(2px);
+  filter: brightness(0.5) saturate(0.8) contrast(1.2) blur(2px);
 }
 
 .training-centers-cont:hover .training-center:hover {
@@ -376,4 +428,62 @@ footer{
   width: 1.8rem;
   transform: translateY(20%);
   margin: 0 0.4rem;
+}
+
+/* --------------- Media query ---------------- */
+
+@media only screen and (max-width:708px){
+  .small-d-none{
+    display: none !important;
+  }
+
+  .quote-image > h1 > span {
+    -webkit-text-stroke: 0.12rem black;
+  }
+
+  .quote-image > h1{
+    color: black;
+    text-shadow: 4px 2px 4px #ffffff;
+  }
+}
+
+@media only screen and (min-width:709px){
+  .menu-icon{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width:1085px){
+  .features-cont{
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+
+@media only screen and (max-width:600px){
+  .training-centers-cont {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width:601px) and (max-width:1386px){
+  .training-centers-cont {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width:1386px){
+  .training-centers-cont:hover .training-center:not(:hover) {
+    filter:none;
+  }
+  .training-centers-cont:hover .training-center:hover {
+    transform: none;
+    filter: none;
+
+  }
+
+  .training-center:hover a {
+    padding: 0.4rem 1.5rem;
+  }
+
 }
