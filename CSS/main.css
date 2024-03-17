@@ -107,6 +107,15 @@ a {
   text-align: center;
 }
 
+.scale{
+  transition: transform 0.6s ease-in-out;
+  transform: scale(1.05);
+}
+
+.highlight{
+  filter: brightness(1.3) saturate(1.2);
+}
+
 /*----------------    Specific CSS Section    ----------------*/
 
 header {
@@ -145,14 +154,18 @@ header {
   color: white;
 }
 
+.menu-icon{
+  display: none;
+}
+
 .sidebar{
   background-color: rgba(255, 255, 255, 0.4);
   position: fixed;
   top: 0;
   right: 0;
-  width: 15rem;
+  width: 13rem;
   height: auto;
-  padding: 1rem 1rem 5rem 1rem;
+  padding: 1rem 1rem 7rem 1rem;
   border-radius: 1rem;
   backdrop-filter: blur(5px);
   display: none;
@@ -179,10 +192,11 @@ header {
 
 .mobile-nav li:nth-child(1):hover{
   background-color: rgba(0, 0, 0, 0);
+  align-self: end;
 }
 
 .mobile-nav li a{
-  width: 100%;
+  width: 100%; 
   display: block;
 }
 
@@ -323,7 +337,7 @@ header {
   border-radius: 1rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .plan > .price-content > p > span:nth-child(1) {
@@ -369,26 +383,46 @@ header {
 }
 
 .space-for-footer{
-  height: 100svh;
+  height: 100lvh;
   width: 100%;
   position: relative;
   z-index: -10;
 }
+
 footer{
   position: relative;
   z-index: -5;
 }
+
 .footer{
   position: fixed;
   width: 100%;
-  height: 100svh;
-  padding: 4rem 4rem 1rem 4rem;
+  height: 100lvh;
+  padding: 3rem clamp(1rem, 5vw, 5rem) 1.5rem clamp(1rem, 5vw, 5rem);
   bottom: 0;
   background-color: black;
   color: var(--off-white);
   z-index: -1;
   justify-content: space-between;
   align-items: normal;
+}
+
+.footer-links{
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.footer-links h2{
+  border-bottom: 1px solid rgba(239, 234, 227, 1);
+  /* margin-left: 0.5rem; */
+}
+
+.footer-pages{
+  align-items: flex-start;
+}
+
+.footer-social{
+  align-items: flex-start;
 }
 
 .footer-credit{
@@ -404,24 +438,8 @@ footer{
 
 .footer-brand-name{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14.5vw;
+  font-size: clamp(2.9rem, 14.5vw, 14.5rem);
   font-weight: 900;
-}
-
-.footer-links{
-  justify-content: space-around;
-}
-
-.footer-links h2{
-  border-bottom: 1px solid rgba(239, 234, 227, 1);
-}
-
-.footer-pages{
-  align-items: flex-start;
-}
-
-.footer-social{
-  align-items: flex-start;
 }
 
 .icon-before{
@@ -479,11 +497,54 @@ footer{
   .training-centers-cont:hover .training-center:hover {
     transform: none;
     filter: none;
-
   }
-
   .training-center:hover a {
     padding: 0.4rem 1.5rem;
   }
+}
+
+@media only screen and (max-width:1036px){
+  .standard {
+    transform: scale(1);
+  }
+  .plan:hover {
+    transform: translateY(0%);
+  }
+  .standard:hover {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width:651px){
+  .footer-credit{
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(239, 234, 227, 0.8);
+  }
+
+  .footer-credit p:nth-child(3){
+    display: none;
+  }
+
+  .footer-credit p:nth-child(2){
+    border-top: 1px solid rgba(239, 234, 227, .3);
+    border-bottom: 1px solid rgba(239, 234, 227, .3);
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .footer-credit p:nth-child(1)::after{
+    content: 'India';
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    font-weight: bold;
+    background: url('/Images/Icons/world.svg')  no-repeat left center;
+    background-size: contain;
+  }
 
 }
+
+
