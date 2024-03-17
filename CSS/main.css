@@ -1,3 +1,6 @@
+
+/*----------------    Page Setup CSS Section    ----------------*/
+
 :root {
   --primary-color: #22ad01;
   --secondary-color: #003c2f;
@@ -58,7 +61,6 @@ body {
 .f-normal {
   font-weight: 700;
   font-size: clamp(1.1rem, 1.35vw, 1.3rem);
-  /* font-size: 1.3rem; */
 }
 
 .f-small {
@@ -147,7 +149,9 @@ a:hover{
   color: var(--primary-color);
 }
 
-/*----------------    Specific CSS Section    ----------------*/
+/*----------------------***** Specific CSS Section *****----------------------*/
+
+/*----------------    Header hero section with nav bar section CSS    ----------------*/
 
 header {
   display: flex;
@@ -266,6 +270,9 @@ header {
   border-color: #259609;
 }
 
+
+/*----------------    Why Choose Us Section CSS    ----------------*/
+
 .features-cont {
   margin: 3rem 0rem 1rem 0rem;
 }
@@ -279,6 +286,8 @@ header {
   height: auto;
 }
 
+/*----------------    Quote With BG Image Section CSS    ----------------*/
+
 .quote-image {
   background: url("/Images/yoga-clipart.webp") no-repeat right center,
     var(--background-color);
@@ -291,6 +300,8 @@ header {
   color: transparent;
   -webkit-text-stroke: 0.2rem var(--secondary-color);
 }
+
+/*----------------    Training Centers Section CSS    ----------------*/
 
 .training-centers-cont {
   display: grid;
@@ -345,6 +356,8 @@ header {
   filter: brightness(1.07);
 }
 
+/*----------------    Pricing Plans Section CSS    ----------------*/
+
 .pricing-plans {
   width: 100%;
   background-color: var(--background-color);
@@ -382,15 +395,18 @@ header {
   height: auto;
   margin-right: 5px;
 }
+
 .price-content {
   padding: 1.5rem;
 }
+
 .plan-name {
   background-color: var(--primary-color);
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .price-content > a {
   margin-top: 1rem;
 }
@@ -407,6 +423,8 @@ header {
   transform-origin: bottom;
   transform: scale(1.1);
 }
+
+/*----------------    Footer Full Screen Section CSS    ----------------*/
 
 .space-for-footer {
   height: 100lvh;
@@ -475,7 +493,8 @@ footer {
   margin: 0 0.4rem;
 }
 
-/* --------------- Media query ---------------- */
+
+/*----------------    Media Query CSS    ----------------*/
 
 @media only screen and (max-width: 708px) {
   .small-d-none {
