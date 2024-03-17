@@ -1,8 +1,3 @@
-// const scroll = new LocomotiveScroll({
-//     el: document.querySelector('#main'),
-//     smooth: true
-// });
-
 
 // For menu bar in mobile 
 $('.menu-icon').click(function() {
