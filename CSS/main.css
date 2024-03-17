@@ -62,7 +62,7 @@ body {
 }
 
 .f-small {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
 }
 
@@ -78,10 +78,18 @@ a {
   color: white;
 }
 
+.btn:hover{
+  background-color: #259609;
+  padding: 0.4rem 1.5rem;
+  border-radius: 1.56rem;
+  color: white;
+}
+
 .section {
   width: 100%;
   height: max-content;
   padding: 3rem clamp(1rem, 5vw, 8rem);
+  background-color: white;
 }
 
 .row-flex {
@@ -99,21 +107,44 @@ a {
   align-items: center;
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
-.t-center{
+.t-center {
   text-align: center;
 }
 
-.scale{
+.scale {
   transition: transform 0.6s ease-in-out;
   transform: scale(1.05);
 }
 
-.highlight{
+.highlight {
   filter: brightness(1.3) saturate(1.2);
+}
+
+a:focus,
+a:active,
+a:visited{
+  color: white;
+}
+
+a:not(.link-hover-none):after {
+  display:block;
+  content: '';
+  border-bottom: 2px solid var(--primary-color);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+  transform-origin:  0% 50%;
+}
+
+a:not(.link-hover-none):hover:after { 
+  transform: scaleX(1); 
+}
+
+a:hover{
+  color: var(--primary-color);
 }
 
 /*----------------    Specific CSS Section    ----------------*/
@@ -124,7 +155,8 @@ header {
   justify-content: space-between;
   padding: 1rem 2vw 0 2vw;
   background-color: black;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("/Images/yv-hero.jpg") no-repeat center center, black;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url("/Images/yv-hero.webp") no-repeat center center, black;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
@@ -154,12 +186,12 @@ header {
   color: white;
 }
 
-.menu-icon{
+.menu-icon {
   display: none;
 }
 
-.sidebar{
-  background-color: rgba(255, 255, 255, 0.4);
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   right: 0;
@@ -167,36 +199,36 @@ header {
   height: auto;
   padding: 1rem 1rem 7rem 1rem;
   border-radius: 1rem;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(1.5rem);
   display: none;
 }
 
-.mobile-nav{
+.mobile-nav {
   width: 100%;
   display: flex;
   flex-direction: column;
   list-style: none;
 }
 
-.mobile-nav li{
+.mobile-nav li {
   margin-top: 1rem;
   padding-left: 1rem;
   width: 100%;
 }
 
-.mobile-nav li:hover{
+.mobile-nav li:hover {
   color: white;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
 }
 
-.mobile-nav li:nth-child(1):hover{
+.mobile-nav li:nth-child(1):hover {
   background-color: rgba(0, 0, 0, 0);
   align-self: end;
 }
 
-.mobile-nav li a{
-  width: 100%; 
+.mobile-nav li a {
+  width: 100%;
   display: block;
 }
 
@@ -230,9 +262,8 @@ header {
   border: 2px solid var(--primary-color);
   padding: 0.278rem 1.5rem 0.278rem 3.55rem;
 }
-
-.why-choose-us{
-  background-color: white;
+.hero-cta-btn-group a:nth-child(2):hover {
+  border-color: #259609;
 }
 
 .features-cont {
@@ -249,7 +280,8 @@ header {
 }
 
 .quote-image {
-  background: url("/Images/yoga-clipart.png") no-repeat right center, var(--background-color);
+  background: url("/Images/yoga-clipart.webp") no-repeat right center,
+    var(--background-color);
   background-size: contain;
 }
 
@@ -258,10 +290,6 @@ header {
   font-weight: bolder;
   color: transparent;
   -webkit-text-stroke: 0.2rem var(--secondary-color);
-}
-
-.our-training-centers{
-  background-color: white;
 }
 
 .training-centers-cont {
@@ -273,16 +301,16 @@ header {
 }
 
 .center-junagadh {
-  background: url("/Images/center-junagadh.jpeg") no-repeat center bottom;
+  background: url("/Images/center-junagadh.webp") no-repeat center bottom;
 }
 .center-jamnagar {
-  background: url("/Images/center-jamnagar.jpeg") no-repeat center bottom;
+  background: url("/Images/center-jamnagar.webp") no-repeat center bottom;
 }
 .center-somnath {
-  background: url("/Images/center-somnath.jpg") no-repeat center bottom;
+  background: url("/Images/center-somnath.webp") no-repeat center bottom;
 }
 .center-gandhinagar {
-  background: url("/Images/center-gandhinagar.jpeg") no-repeat center bottom;
+  background: url("/Images/center-gandhinagar.webp") no-repeat center bottom;
 }
 
 .training-center {
@@ -298,7 +326,6 @@ header {
   font-weight: 900;
   font-size: clamp(1.7rem, 3.5vw, 2rem);
   -webkit-text-stroke: 1px white;
-  
 }
 
 .training-center:hover a {
@@ -332,7 +359,6 @@ header {
 }
 
 .plan {
-  /* padding: 1rem 1rem; */
   background-color: rgb(255, 255, 255);
   border-radius: 1rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -382,19 +408,19 @@ header {
   transform: scale(1.1);
 }
 
-.space-for-footer{
+.space-for-footer {
   height: 100lvh;
   width: 100%;
   position: relative;
   z-index: -10;
 }
 
-footer{
+footer {
   position: relative;
   z-index: -5;
 }
 
-.footer{
+.footer {
   position: fixed;
   width: 100%;
   height: 100lvh;
@@ -407,27 +433,28 @@ footer{
   align-items: normal;
 }
 
-.footer-links{
+.footer-links {
   justify-content: space-around;
   gap: 2rem;
+  padding-top: 2rem;
 }
 
-.footer-links h2{
+.footer-links h2 {
   border-bottom: 1px solid rgba(239, 234, 227, 1);
-  /* margin-left: 0.5rem; */
+  margin-left: 0.5rem;
 }
 
-.footer-pages{
+.footer-pages {
   align-items: flex-start;
 }
 
-.footer-social{
+.footer-social {
   align-items: flex-start;
 }
 
-.footer-credit{
+.footer-credit {
   padding-top: 1rem;
-  border-top: 1px solid rgba(239, 234, 227, .3);
+  border-top: 1px solid rgba(239, 234, 227, 0.3);
   justify-content: space-between;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -436,13 +463,13 @@ footer{
   width: auto;
 }
 
-.footer-brand-name{
+.footer-brand-name {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2.9rem, 14.5vw, 14.5rem);
+  font-size: clamp(2.9rem, 14.4vw, 14.5rem);
   font-weight: 900;
 }
 
-.icon-before{
+.icon-before {
   width: 1.8rem;
   transform: translateY(20%);
   margin: 0 0.4rem;
@@ -450,8 +477,8 @@ footer{
 
 /* --------------- Media query ---------------- */
 
-@media only screen and (max-width:708px){
-  .small-d-none{
+@media only screen and (max-width: 708px) {
+  .small-d-none {
     display: none !important;
   }
 
@@ -459,40 +486,40 @@ footer{
     -webkit-text-stroke: 0.12rem black;
   }
 
-  .quote-image > h1{
+  .quote-image > h1 {
     color: black;
     text-shadow: 4px 2px 4px #ffffff;
   }
 }
 
-@media only screen and (min-width:709px){
-  .menu-icon{
+@media only screen and (min-width: 709px) {
+  .menu-icon {
     display: none !important;
   }
 }
 
-@media only screen and (max-width:1085px){
-  .features-cont{
+@media only screen and (max-width: 1085px) {
+  .features-cont {
     flex-direction: column;
     gap: 2.5rem;
   }
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width: 600px) {
   .training-centers-cont {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-@media only screen and (min-width:601px) and (max-width:1386px){
+@media only screen and (min-width: 601px) and (max-width: 1386px) {
   .training-centers-cont {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media only screen and (max-width:1386px){
+@media only screen and (max-width: 1386px) {
   .training-centers-cont:hover .training-center:not(:hover) {
-    filter:none;
+    filter: none;
   }
   .training-centers-cont:hover .training-center:hover {
     transform: none;
@@ -503,7 +530,7 @@ footer{
   }
 }
 
-@media only screen and (max-width:1036px){
+@media only screen and (max-width: 1036px) {
   .standard {
     transform: scale(1);
   }
@@ -515,8 +542,8 @@ footer{
   }
 }
 
-@media only screen and (max-width:651px){
-  .footer-credit{
+@media only screen and (max-width: 651px) {
+  .footer-credit {
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
@@ -525,26 +552,23 @@ footer{
     color: rgba(239, 234, 227, 0.8);
   }
 
-  .footer-credit p:nth-child(3){
+  .footer-credit p:nth-child(3) {
     display: none;
   }
 
-  .footer-credit p:nth-child(2){
-    border-top: 1px solid rgba(239, 234, 227, .3);
-    border-bottom: 1px solid rgba(239, 234, 227, .3);
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
+  .footer-credit p:nth-child(2) {
+    border-top: 1px solid rgba(239, 234, 227, 0.3);
+    border-bottom: 1px solid rgba(239, 234, 227, 0.3);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
   }
 
-  .footer-credit p:nth-child(1)::after{
-    content: 'India';
+  .footer-credit p:nth-child(1)::after {
+    content: "India";
     margin-left: 1rem;
     padding-left: 1.5rem;
     font-weight: bold;
-    background: url('/Images/Icons/world.svg')  no-repeat left center;
+    background: url("/Images/Icons/world.svg") no-repeat left center;
     background-size: contain;
   }
-
 }
-
-

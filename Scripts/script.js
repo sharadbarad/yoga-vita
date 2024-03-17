@@ -48,7 +48,6 @@ $('.plan').waypoint(function(direction) {
             $element.removeClass('highlight');
         }, 300);
     }
-
 }, {
     offset: '40%'
 });
