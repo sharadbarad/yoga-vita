@@ -22,6 +22,11 @@ body {
   width: 100%;
 }
 
+img,a,button{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: var(--font-family);
   font-style: normal;
@@ -70,7 +75,7 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 .btn {
@@ -89,6 +94,8 @@ a {
 
 .section {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   padding: 3rem clamp(1rem, 5vw, 8rem);
   background-color: white;
@@ -98,7 +105,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   gap: 5rem;
 }
 
@@ -123,13 +130,18 @@ a {
 }
 
 .highlight {
-  filter: brightness(1.3) saturate(1.2);
+  -webkit-filter: brightness(1.3) saturate(1.2);
+          filter: brightness(1.3) saturate(1.2);
 }
 
 a:focus,
 a:active,
 a:visited{
   color: white;
+}
+
+a:hover{
+  color: var(--primary-color);
 }
 
 a:not(.link-hover-none):after {
@@ -143,10 +155,6 @@ a:not(.link-hover-none):after {
 
 a:not(.link-hover-none):hover:after { 
   transform: scaleX(1); 
-}
-
-a:hover{
-  color: var(--primary-color);
 }
 
 /*----------------------***** Specific CSS Section *****----------------------*/
@@ -201,9 +209,10 @@ header {
   right: 0;
   width: 13rem;
   height: auto;
-  padding: 1rem 1rem 7rem 1rem;
+  padding: 0.5rem 1rem 7rem 1rem;
   border-radius: 1rem;
-  backdrop-filter: blur(1.5rem);
+  -webkit-backdrop-filter: blur(1.5rem);
+          backdrop-filter: blur(1.5rem);
   display: none;
 }
 
@@ -211,29 +220,27 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  list-style: none;
 }
 
-.mobile-nav li {
-  margin-top: 1rem;
-  padding-left: 1rem;
-  width: 100%;
+.close-icon{
+  align-self: flex-end;
+  line-height: 0px;
 }
 
-.mobile-nav li:hover {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
+.mobile-nav a {
+  margin-top: 0.8rem;
+  padding: 0.3rem 0.5rem;
+  color: var(--off-white);
 }
 
-.mobile-nav li:nth-child(1):hover {
-  background-color: rgba(0, 0, 0, 0);
-  align-self: end;
+.mobile-nav a[href="#t-centers"] {
+  margin-top: 0.8rem;
 }
 
-.mobile-nav li a {
-  width: 100%;
-  display: block;
+.mobile-nav a:hover {
+  color: var(--off-white);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.8rem;
 }
 
 .hero-headline {
@@ -329,7 +336,7 @@ header {
   gap: clamp(11rem, 40vh, 17rem);
   border-radius: 1rem;
   padding: 2rem;
-  transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out, -webkit-filter 0.25s ease-in-out;
 }
 
 .training-center > h2 {
@@ -348,12 +355,14 @@ header {
 }
 
 .training-centers-cont:hover .training-center:not(:hover) {
-  filter: brightness(0.5) saturate(0.8) contrast(1.2) blur(2px);
+  -webkit-filter: brightness(0.5) saturate(0.8) contrast(1.2) blur(2px);
+          filter: brightness(0.5) saturate(0.8) contrast(1.2) blur(2px);
 }
 
 .training-centers-cont:hover .training-center:hover {
   transform: scale(1.03);
-  filter: brightness(1.07);
+  -webkit-filter: brightness(1.07);
+          filter: brightness(1.07);
 }
 
 /*----------------    Pricing Plans Section CSS    ----------------*/
@@ -376,7 +385,7 @@ header {
   border-radius: 1rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
 }
 
 .plan > .price-content > p > span:nth-child(1) {
@@ -538,11 +547,13 @@ footer {
 
 @media only screen and (max-width: 1386px) {
   .training-centers-cont:hover .training-center:not(:hover) {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
   }
   .training-centers-cont:hover .training-center:hover {
     transform: none;
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
   }
   .training-center:hover a {
     padding: 0.4rem 1.5rem;
